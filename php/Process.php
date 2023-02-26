@@ -5,15 +5,15 @@
 //third, add 1 record for each selected products for that ID & Name
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-	$u_id = $_POST["js_cust_id"];
-	$u_cust_name = $_POST["js_cust_name"]; 
-	$u_flag = $_POST["js_flag"];
+	$u_id = $_POST["js_id"];
+	// $u_cust_name = $_POST["js_cust_name"]; 
+	// $u_flag = $_POST["js_flag"];
 	
 	// Database Access
 	$servername = 'localhost';
-	$username = 'admin';
-	$password = 'admin';
-	$dbname = 'tableau_poc';
+	$username = 'root';
+	$password = 'root';
+	$dbname = 'test_db';
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "DELETE FROM `target_customers` WHERE `Cust_ID`=".$u_id." AND `Cust_Name`='".$u_cust_name."';";
+	$sql = "DELETE FROM `dataset_3` WHERE `ï»¿ID`=".$u_id.";";
 	
 	if ($result = $conn->query($sql) == TRUE)
 	{
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 	}
 	
 
-	$sql = "INSERT INTO `target_customers`(`Cust_ID`, `Cust_Name`, `Target_Flag`) VALUES ('".$u_id."','".$u_cust_name."','".$u_flag."')";
+	$sql = "INSERT INTO `dataset_3`(`Cust_ID`) VALUES ('".$u_id."')";
 	if ($result = $conn->query($sql) == TRUE)
 	{
 		//echo "Configurations saved!";

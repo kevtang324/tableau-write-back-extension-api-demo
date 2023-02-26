@@ -11,19 +11,36 @@
 </head>
 <body>
 	<div class="container">
-		<h4 align="center">Target Customers Configuration</h4><br>
+		<h4 align="center">Update Priority</h4><br>
 	
 		<div class="form-group">
-			<label for="cust_id">Customer ID:</label>  
-			<input type="text" class="form-control" name="cust_id" id="cust_id" placeholder="Enter ID" disabled /><br />
+			<label>ID:</label>  
+			<input type="text" class="form-control" id="row_id" placeholder="Enter ID" disabled /><br />
 
-			<label for="cust_name">Customer Name:</label>  
-			<input type="text" class="form-control" name="cust_name" id="cust_name" placeholder="Enter Customer Name" disabled /><br />
+			<label>Scenario Key:</label>  
+			<input type="text" class="form-control" id="scenario_key_id" placeholder="Enter Scenario Key" disabled /><br />
+
+			<label>Violation Location:</label>  
+			<input type="text" class="form-control" id="violation_location_id" placeholder="Enter Violation Location" disabled /><br />
+
+			<label>Current Priority:</label>
+			<select id="priority_id">
+				<option value="High">High</option>
+				<option value="Medium">Medium</option>
+				<option value="Low">Low</option>
+			</select>
+
+			<!-- <label>Current Priority:</label>  
+			<input type="text" class="form-control" id="priority_id" placeholder="Enter ID" /><br /> -->
+
+
+			<!-- <label for="cust_name">Customer Name:</label>  
+			<input type="text" class="form-control" name="cust_name" id="cust_name" placeholder="Enter Customer Name" disabled /><br /> -->
 		</div>
 
-		<label for="target_flag">Target Flag:</label>  
+		<!-- <label for="target_flag">Target Flag:</label>  
 		<input type="radio" class="radio-inline" name="target_flag" id="target_flag" value="Y"> Y&nbsp;&nbsp;
-		<input type="radio" class="radio-inline" name="target_flag" id="target_flag" value="N"> N<br><br>
+		<input type="radio" class="radio-inline" name="target_flag" id="target_flag" value="N"> N<br><br> -->
 
 		<button title="Write Back" class="form-control" type="button" id="write_back_button" onclick = "writeToDatabase()">Update</button>
 	</div>
